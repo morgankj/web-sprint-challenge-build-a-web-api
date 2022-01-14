@@ -2,11 +2,11 @@
 const express = require('express');
 const router = express.Router();
 
-const Actions = require('./actions-model.js');
-const { checkActionId } = require('./actions-middlware.js');
+const Action = require('./actions-model.js');
+const { checkActionId, checkAction } = require('./actions-middlware.js');
 
 router.get('/', (req, res, next) => {
-    Actions.get()
+    Action.get()
         .then(actions => {
             res.status(200).json(actions);
         })
@@ -14,9 +14,17 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', checkActionId, (req, res, next) => {
-    Actions.get(req.params.id)
-        .then(actions => {
-            res.status(200).json(actions);
+    Action.get(req.params.id)
+        .then(action => {
+            res.status(200).json(action);
+        })
+        .catch(next);
+});
+
+router.post('/', checkAction, (req, res, next) => {
+    Action.insert(req.body)
+        .then(action => {
+            res.status(201).json(action);
         })
         .catch(next);
 });
