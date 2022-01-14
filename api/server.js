@@ -18,11 +18,10 @@ server.get('/', (req, res) => {
 });
 
 server.use('*', (req, res) => {
-    res.status(404).json({ message: `${req.method} ${req.baseUrl} not found` });
+    res.status(404).json({ message: `URL ${req.method} ${req.baseUrl} not found` });
 });
 
-server.use((error, req, res) => {
-    console.log("ERROR: ", error.message);
+server.use((error, req, res, next) => {
     res.status(error.status || 500).json({ message: error.message });
 });
 

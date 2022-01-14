@@ -9,7 +9,8 @@ async function checkProjectId(req, res, next) {
             req.project = possibleProject;
             next();
         } else {
-            next({ status: 404, message: `No project found with ID: ${id}`})
+            console.log("ERROR");
+            next({ status: 404, message: `No project found with ID: ${id}` })
         }
     } catch (err) {
         next(err);
