@@ -11,23 +11,20 @@ This is an individual assessment. All work must be your own. All projects will b
 You are not allowed to collaborate during the sprint challenge.
 
 ## Introduction
-
 In meeting the minimum viable product (MVP) specifications listed below, your project should provide an API that has Create, Read, Update and Delete (CRUD) functionality for both `projects` and `actions`.
+
 
 ## Instructions
 
 ### Task 1: Project Set Up
-
 - [X] Run `npm install` to install your dependencies.
 - [X] Run tests locally executing `npm test`.
 - [X] Reset the database to its original state executing `npm run resetdb`.
 
 ### Task 2: Project Requirements (MVP)
-
 Your finished project must include all of the following requirements:
 
 #### NPM Scripts
-
 A _"test"_ script already exists you can use to run tests against your code.
 A _"resetdb"_ script exists that allows you to reset the database to its original state.
 
@@ -36,11 +33,9 @@ A _"resetdb"_ script exists that allows you to reset the database to its origina
 - [X] Install _nodemon_ as a development dependency that would not be used in production.
 
 #### Environment Variables
-
-- [ ] Bring the port number from the `process.env` variable, falling back to `9000` if `process.env.PORT` is undefined **!!!**
+- [X] Bring the port number from the `process.env` variable, falling back to `9000` if `process.env.PORT` is undefined **!!!**
 
 #### Endpoints
-
 Inside `api/projects/projects-router.js` build the following endpoints:
 
 - [ ] `[GET] /api/projects`
@@ -83,38 +78,32 @@ Inside `api/actions/actions-router.js` build endpoints for performing CRUD opera
   - If there is no action with the given `id` it responds with a status code 404.
 
 #### Middleware functions
-
 - [ ] Write at least two middleware functions for this API, and consume them in the proper places of your code.
 
 ### Database Schemas
-
 The description of the structure and extra information about each _resource_ stored in the included database (`./data/database.db3`) is listed below.
 
 #### Projects
-
-| Field       | Data Type | Metadata                                                                    |
-| ----------- | --------- | --------------------------------------------------------------------------- |
-| id          | number    | do not provide it when creating projects, the database will generate it     |
-| name        | string    | required                                                                    |
-| description | string    | required                                                                    |
-| completed   | boolean   | not required, defaults to false when creating projects                      |
+| Field       | Data Type | Metadata |
+| ---------------------------------- |
+| id          | number    | do not provide it when creating projects, the database will generate it |
+| name        | string    | required |
+| description | string    | required |
+| completed   | boolean   | not required, defaults to false when creating projects |
 
 #### Actions
-
-| Field       | Data Type | Metadata                                                                                         |
-| ----------- | --------- | ------------------------------------------------------------------------------------------------ |
-| id          | number    | do not provide it when creating actions, the database will generate it                           |
-| project_id  | number    | required, must be the id of an existing project                                                  |
-| description | string    | required, up to 128 characters long                                                              |
+| Field       | Data Type | Metadata |
+| ---------------------------------- |
+| id          | number    | do not provide it when creating actions, the database will generate it |
+| project_id  | number    | required, must be the id of an existing project |
+| description | string    | required, up to 128 characters long |
 | notes       | string    | required, no size limit. Used to record additional notes or requirements to complete the action  |
-| completed   | boolean   | not required, defaults to false when creating actions                                            |
+| completed   | boolean   | not required, defaults to false when creating actions |
 
 ### Database Persistence Helpers
-
 The project includes models you can use to manage the persistence of _project_ and _action_ data. These files are `api/projects/projects-model.js` and `api/actions/actions-model.js`. Both files publish the following api, which you can use to store, modify and retrieve each resource:
 
 **All these helper methods return a promise. Remember to use .then().catch() or async/await.**
-
 - `get()`: resolves to an array of all the resources contained in the database. If you pass an `id` to this method it will return the resource with that id if one is found.
 - `insert()`: calling insert passing it a resource object will add it to the database and return the newly created resource.
 - `update()`: accepts two arguments, the first is the `id` of the resource to update, and the second is an object with the `changes` to apply. It returns the updated resource. If a resource with the provided `id` is not found, the method returns `null`.
@@ -125,7 +114,6 @@ The `projects-model.js` includes an extra method called `getProjectActions()` th
 We have provided test data for all the resources.
 
 **Important Notes:**
-
 - Do not make changes to your `package.json` except to add **additional** dependencies and scripts. Do not update existing packages.
 - Your app must be able to run in Node v.12. Do not use newer features of Node (e.g.: optional chaining and nullish coalescing NOT supported).
 - Use an HTTP client like `HTTPie`, `Postman` or `Insomnia` to manually test the API's endpoints.
@@ -136,14 +124,12 @@ We have provided test data for all the resources.
 - Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 
 ## Submission format
-
 - [ ] Submit via Codegrade by pushing commits to your `main` branch.
 - [ ] Check Codegrade before the deadline to compare its results against your local tests.
 - [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
 - [ ] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
 
 ## Interview Questions
-
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
