@@ -118,7 +118,7 @@ We have provided test data for all the resources.
 - Your app must be able to run in Node v.12. Do not use newer features of Node (e.g.: optional chaining and nullish coalescing NOT supported).
 - Use an HTTP client like `HTTPie`, `Postman` or `Insomnia` to manually test the API's endpoints.
 - Use Express Routers to organize your endpoints.
-- Even though you are only required to write two middleware functions, it is advised that you leverage middlewares as much as possible.
+- Even though you are only required to write two middleware functions, it is advised that you leverage middleware as much as possible.
 - You are welcome to create additional files, but **do not move or rename existing files** or folders.
 - In your solution, it is essential that you follow best practices and produce clean and professional results.
 - Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
@@ -133,7 +133,17 @@ We have provided test data for all the resources.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+- Node is asynchronous, event driven, scalable, and fast - it allows you to create server-side tools and apps using JS (doesn't need a browser).
+- Express is a node framework; it allows you to write handlers using HTTP verbs at different routes. Express makes it easier to write DRY code!
+
 1. Understand and explain the use of Middleware.
+- Middleware are functions that you can create and use to access, manipulate, and return data (via request and response objects, and the next() function) to be used in an app's request-response cycle.
+
 1. The basic principles of the REST architectural style.
+- Short for Representational State Transfer, REST is designed to take advantage of existing protocols. It is stateless, uniform, cacheable, layered, and built on a client-server model.
+
 1. Understand and explain the use of Express Routers.
+- Express routers allow you to control what happens to data when a user navigates to specific paths on an app. 
+
 1. Describe tooling used to manually test the correctness of an API.
+- Tools like `HTTPie`, `Postman` or `Insomnia` allow you to simulate user actions on specific pages of your app to see how your app handles the data, without ever actually having to hook up a front end or click through an actual browser. You can see how the data is processed, stored, and returned, for testing purposes. It allows you to confirm correct functionality, as well as trouble-shoot and solve problems where they arise. 
