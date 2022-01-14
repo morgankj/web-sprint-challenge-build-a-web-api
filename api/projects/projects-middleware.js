@@ -17,6 +17,16 @@ async function checkProjectId(req, res, next) {
     }
 }
 
+function checkProject(req, res, next) {
+    const { name, description } = req.body;
+    if (!name || !description) {
+        next({ status: 400, message: "Projects require a name and description" });
+    } else {
+        next();
+    }
+}
+
 module.exports = {
-    checkProjectId
+    checkProjectId,
+    checkProject
 };
