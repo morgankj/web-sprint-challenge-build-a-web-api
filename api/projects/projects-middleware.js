@@ -12,7 +12,7 @@ async function checkProjectId(req, res, next) {
             next({ status: 404, message: `No project found with ID: ${id}`})
         }
     } catch (err) {
-        next(err)
+        next(err);
     }
 }
 
