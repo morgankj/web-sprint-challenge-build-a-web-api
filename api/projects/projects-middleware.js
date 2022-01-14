@@ -9,7 +9,6 @@ async function checkProjectId(req, res, next) {
             req.project = possibleProject;
             next();
         } else {
-            console.log("ERROR");
             next({ status: 404, message: `No project found with ID: ${id}` })
         }
     } catch (err) {
@@ -26,7 +25,16 @@ function checkProject(req, res, next) {
     }
 }
 
+function checkProjectCompleted(req, res, next) {
+    if (req.body.completed === undefined) {
+        next({ status: 400, message: "Please include a 'completed' key in your body" });
+    } else {
+        next();
+    }
+}
+
 module.exports = {
     checkProjectId,
-    checkProject
+    checkProject,
+    checkProjectCompleted
 };
