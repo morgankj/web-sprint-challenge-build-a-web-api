@@ -136,14 +136,14 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 - Node is asynchronous, event driven, scalable, and fast - it allows you to create server-side tools and apps using JS (doesn't need a browser).
 - Express is a node framework; it allows you to write handlers using HTTP verbs at different routes. Express makes it easier to write DRY code!
 
-1. Understand and explain the use of Middleware.
+2. Understand and explain the use of Middleware.
 - Middleware are functions that you can create and use to access, manipulate, and return data (via request and response objects, and the next() function) to be used in an app's request-response cycle.
 
-1. The basic principles of the REST architectural style.
+3. The basic principles of the REST architectural style.
 - Short for Representational State Transfer, REST is designed to take advantage of existing protocols. It is stateless, uniform, cacheable, layered, and built on a client-server model.
 
-1. Understand and explain the use of Express Routers.
+4. Understand and explain the use of Express Routers.
 - Express routers allow you to control what happens to data when a user navigates to specific paths on an app. 
 
-1. Describe tooling used to manually test the correctness of an API.
+5. Describe tooling used to manually test the correctness of an API.
 - Tools like `HTTPie`, `Postman` or `Insomnia` allow you to simulate user actions on specific pages of your app to see how your app handles the data, without ever actually having to hook up a front end or click through an actual browser. You can see how the data is processed, stored, and returned, for testing purposes. It allows you to confirm correct functionality, as well as trouble-shoot and solve problems where they arise. 
