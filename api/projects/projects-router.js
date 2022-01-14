@@ -32,6 +32,14 @@ router.put('/:id', checkProjectId, checkProject, checkProjectCompleted, (req, re
             res.status(200).json(project);
         })
         .catch(next);
-})
+});
+
+router.delete('/:id', checkProjectId, (req, res, next) => {
+    Projects.remove(req.params.id)
+        .then(() => {
+            res.status(200).json();
+        })
+        .catch(next);
+});
 
 module.exports = router;
