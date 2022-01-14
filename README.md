@@ -51,7 +51,7 @@ Inside `api/projects/projects-router.js` build the following endpoints:
   - Returns the updated project as the body of the response.
   - If there is no project with the given `id` it responds with a status code 404.
   - If the request body is missing any of the required fields it responds with a status code 400.
-- [ ] `[DELETE] /api/projects/:id`
+- [X] `[DELETE] /api/projects/:id`
   - Returns no response body.
   - If there is no project with the given `id` it responds with a status code 404.
 - [ ] `[GET] /api/projects/:id/actions`
@@ -78,7 +78,7 @@ Inside `api/actions/actions-router.js` build endpoints for performing CRUD opera
   - If there is no action with the given `id` it responds with a status code 404.
 
 #### Middleware functions
-- [ ] Write at least two middleware functions for this API, and consume them in the proper places of your code.
+- [X] Write at least two middleware functions for this API, and consume them in the proper places of your code.
 
 ### Database Schemas
 The description of the structure and extra information about each _resource_ stored in the included database (`./data/database.db3`) is listed below.
