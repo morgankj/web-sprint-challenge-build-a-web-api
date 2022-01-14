@@ -29,4 +29,12 @@ router.post('/', checkAction, (req, res, next) => {
         .catch(next);
 });
 
+router.put('/:id', checkActionId, checkAction, (req, res, next) => {
+    Action.update(req.params.id, req.body)
+        .then(action => {
+            res.status(200).json(action);
+        })
+        .catch(next);
+});
+
 module.exports = router;
